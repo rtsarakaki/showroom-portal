@@ -1,0 +1,22 @@
+name: "MAIN DEPLOY"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "infra/**"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    uses: ./.github/workflows/terraform.yml
+    with:
+      environment: "prd"
+      aws-assume-role-arn: "arn:aws:iam::590183745616:role/rtsarakaki-us-east-1-terraform-github-actions"
+      aws-region: "us-east-1"
+      aws-statefile-s3-bucket: "rtsarakaki-us-east-1-terraform-statefile"
+      aws-lock-dynamodb-table: "rtsarakaki-us-east-1-terraform-lock"
