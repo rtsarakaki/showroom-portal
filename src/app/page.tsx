@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default function Home() {
   const { data: session } = useSession()
   return (
-    <div className="w-full max-w-screen-xl h-screen flex flex-col justify-center items-center bg-red-300">
+    <div className="w-full max-w-screen-xl h-screen flex flex-col justify-center items-center">
       <h1>Home</h1>
       {session && (
         <pre className="bg-slate-800 text-slate-50 p-10 rounded-lg mt-10">
