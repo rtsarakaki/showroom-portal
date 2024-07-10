@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import PageHeader from '@/components/building-blocks/navigation/page-header'
 import { AuthProvider } from '@/providers/auth.provider'
 import { ThemeProvider } from '@/providers/theme.provider'
+import QueryProvider from '@/providers/query.provider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -39,7 +40,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <PageHeader />
-            {children}
+            <QueryProvider>{children}</QueryProvider>
           </ThemeProvider>
         </body>
       </html>
