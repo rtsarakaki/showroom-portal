@@ -22,7 +22,7 @@ export default function Profile() {
             size="icon"
           >
             <Image
-              src={session?.user?.picture || ''}
+              src={session?.user?.picture || '/avatar.png'}
               alt={session?.user?.name || ''}
               width={40}
               height={40}

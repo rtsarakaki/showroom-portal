@@ -3,7 +3,6 @@
 import { useSession } from 'next-auth/react'
 
 import Link from 'next/link'
-import LogoutButton from '../auth/logout-button'
 import If from '../conditional/if'
 import { ThemeToggle } from '../layout/theme-toggle'
 import Profile from '../auth/profile'
@@ -28,7 +27,7 @@ export default function PageHeader() {
               <Link href="/public">Public</Link>
             </li>
             <li>
-              <Link href="/private">Private</Link>
+              <Link href="/private/content-page">Private</Link>
             </li>
             <li>
               <ThemeToggle />

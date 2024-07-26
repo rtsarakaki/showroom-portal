@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
@@ -7,15 +8,22 @@ import PageHeader from '@/components/building-blocks/navigation/page-header'
 import { AuthProvider } from '@/providers/auth.provider'
 import { ThemeProvider } from '@/providers/theme.provider'
 import QueryProvider from '@/providers/query.provider'
+import checkEnvironmentVariable from '@/utilities/checkEnviromentVariable'
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans'
 })
 
+const appTitle = checkEnvironmentVariable(process.env.APP_TITLE, 'APP_TITLE')
+const appDescription = checkEnvironmentVariable(
+  process.env.APP_DESCRIPTION,
+  'APP_DESCRIPTION'
+)
+
 export const metadata: Metadata = {
-  title: process.env.APP_TITLE,
-  description: process.env.APP_DESCRIPTION
+  title: appTitle,
+  description: appDescription
 }
 
 export default async function RootLayout({
@@ -40,7 +48,10 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <PageHeader />
-            <QueryProvider>{children}</QueryProvider>
+            <QueryProvider>
+              {children}
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryProvider>
           </ThemeProvider>
         </body>
       </html>
