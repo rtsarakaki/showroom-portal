@@ -27,7 +27,7 @@ export default function PageHeader() {
               <Link href="/public">Public</Link>
             </li>
             <li>
-              <Link href="/private/content-page">Private</Link>
+              <Link href="/private/home">Private</Link>
             </li>
             <li>
               <ThemeToggle />

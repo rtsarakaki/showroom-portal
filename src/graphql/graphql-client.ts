@@ -12,8 +12,14 @@ const graphqlAPIToken = checkEnvironmentVariable(
 )
 
 const GraphqlClient = new GraphQLClient(graphqlAPI, {
+  method: 'POST',
   headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
     authorization: `Bearer ${graphqlAPIToken}`
+  },
+  next: {
+    revalidate: 0
   }
 })
 

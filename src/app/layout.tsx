@@ -48,10 +48,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <PageHeader />
-            <QueryProvider>
-              {children}
-              <ReactQueryDevtools initialIsOpen={false} />
-            </QueryProvider>
+            {children}
           </ThemeProvider>
         </body>
       </html>
