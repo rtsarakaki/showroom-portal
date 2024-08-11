@@ -3,15 +3,33 @@ import { NextAuthOptions } from 'next-auth'
 import GitHubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialProvider from 'next-auth/providers/credentials'
+import checkEnvironmentVariable from '@/utilities/checkEnviromentVariable'
+
+const authGithubId = checkEnvironmentVariable(
+  process.env.AUTH_GITHUB_ID,
+  'AUTH_GITHUB_ID'
+)
+const authGithubSecret = checkEnvironmentVariable(
+  process.env.AUTH_GITHUB_SECRET,
+  'AUTH_GITHUB_SECRET'
+)
 
 const gitHubProvider = GitHubProvider({
-  clientId: process.env.AUTH_GITHUB_ID ?? '',
-  clientSecret: process.env.AUTH_GITHUB_SECRET ?? ''
+  clientId: authGithubId,
+  clientSecret: authGithubSecret
 })
 
+const authGoogleId = checkEnvironmentVariable(
+  process.env.AUTH_GOOGLE_ID,
+  'AUTH_GOOGLE_ID'
+)
+const authGoogleSecret = checkEnvironmentVariable(
+  process.env.AUTH_GOOGLE_SECRET,
+  'AUTH_GOOGLE_SECRET'
+)
 const googleProvider = GoogleProvider({
-  clientId: process.env.AUTH_GOOGLE_ID ?? '',
-  clientSecret: process.env.AUTH_GOOGLE_SECRET ?? ''
+  clientId: authGoogleId,
+  clientSecret: authGoogleSecret
 })
 
 const customCredential = CredentialProvider({
