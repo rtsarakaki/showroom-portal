@@ -9,8 +9,12 @@ type componentProps = {
 }
 
 export default function LogoutButton(props: componentProps) {
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: '/auth/login' })
+  }
+
   return (
-    <Button className={`bg-primary`} onClick={() => signOut()}>
+    <Button className={`bg-primary`} onClick={() => handleLogout()}>
       <TbLogout />
       {props.text || 'Logout'}
     </Button>

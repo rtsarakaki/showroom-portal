@@ -23,7 +23,7 @@ export default async function Card({
       key={key}
       className="flex flex-col w-full sm:w-6/12 md:w-4/12 lg:w-3/12"
     >
-      <div className="border border-black rounded-sm p-5 gap-5 m-1  flex flex-col h-full">
+      <div className="border border-secondary-foreground rounded-sm p-5 gap-5 m-1  flex flex-col h-full">
         <div className="flex items-center gap-2">
           <TextToSvgIcon className="text-primary w-10 h-10" icon={icon} />
           <Header text={title} size="1" />
