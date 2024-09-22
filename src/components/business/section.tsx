@@ -1,7 +1,5 @@
 import { getSection } from '@/graphql/section'
-import TextToSvgIcon from '../building-blocks/layout/text-to-svg-icon'
 import Header from '../building-blocks/text/header'
-import Link from 'next/link'
 import Card from './card'
 
 interface ComponentProps {
@@ -33,11 +31,7 @@ export default async function Section({
         </div>
       )
     }
-    return (
-      <>
-        <h1>Nada a ser exibido</h1>
-      </>
-    )
+    return <h1>Nada a ser exibido</h1>
   } catch (error: any) {
     return (
       <div className="w-full h-screen flex flex-col justify-center items-center">

@@ -1,7 +1,6 @@
 import { getSession } from 'next-auth/react'
 
 import Link from 'next/link'
-import If from '../conditional/if'
 import { ThemeToggle } from '../layout/theme-toggle'
 import Profile from '../auth/profile'
 import { getHeader } from '@/graphql/header'
@@ -10,8 +9,6 @@ import { HeaderMenu } from '@/types/header'
 import TextToSvgIcon from '../layout/text-to-svg-icon'
 
 export default async function PageHeader() {
-  const session = await getSession()
-
   const header = await getHeader()
 
   return (
