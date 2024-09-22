@@ -41,16 +41,16 @@ export default async function Profile({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
-        {menus.map((menu: HeaderProfileMenu, index: number) => {
+        {menus.map((menu: HeaderProfileMenu) => {
           if (menu.title === '---') {
             return (
-              <DropdownMenuItem key={index}>
+              <DropdownMenuItem key={menu.id}>
                 <div className="border  w-full"></div>
               </DropdownMenuItem>
             )
           } else {
             return (
-              <DropdownMenuItem key={index} className="ml-2">
+              <DropdownMenuItem key={menu.id} className="ml-2">
                 <div className="flex gap-3 items-center">
                   <TextToSvgIcon
                     className="text-foreground w-5 h-5"

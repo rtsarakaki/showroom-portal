@@ -10,10 +10,12 @@ const GET_HEADER = gql`
       logo
       buttonLogout
       menus {
+        id
         title
         navigateTo
       }
       profileMenus {
+        id
         title
         navigateTo
         iconSvg

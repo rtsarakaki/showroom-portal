@@ -8,11 +8,13 @@ export type Header = {
 }
 
 export type HeaderMenu = {
+  id: string
   title: string
   navigateTo: string
 }
 
 export type HeaderProfileMenu = {
+  id: string
   title: string
   navigateTo: string
   iconSvg: string
