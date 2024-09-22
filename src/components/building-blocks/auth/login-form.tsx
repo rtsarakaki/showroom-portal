@@ -6,16 +6,12 @@ import LoginButton from './login-button'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-type componentProps = {
-  text?: string
-}
-
-export default function LoginForm(props: componentProps) {
+export default function LoginForm() {
   const router = useRouter()
 
-  const [email, setEmailState] = useState('')
-  const [password, setPasswordState] = useState('')
-  const [errorMessage, setErrorMessageState] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSignInSuccess = () => {
     router.refresh()
@@ -30,7 +26,7 @@ export default function LoginForm(props: componentProps) {
         type="text"
         id="email"
         onChange={(emailChanged) => {
-          setEmailState(emailChanged)
+          setEmail(emailChanged)
         }}
       />
       <InputWithLabel
@@ -38,7 +34,7 @@ export default function LoginForm(props: componentProps) {
         type="password"
         id="password"
         onChange={(passwordChanged) => {
-          setPasswordState(passwordChanged)
+          setPassword(passwordChanged)
         }}
       />
       <div className="flex justify-end mt-5 w-full">
@@ -52,7 +48,7 @@ export default function LoginForm(props: componentProps) {
               handleSignInSuccess()
             }}
             onError={(errorMessage: string) => {
-              setErrorMessageState(errorMessage)
+              setErrorMessage(errorMessage)
             }}
           />
           <div className="flex items-center justify-center py-2">

@@ -6,6 +6,6 @@ interface SectionParams {
   }
 }
 
-export default function Page({ params }: SectionParams) {
+export default function Page({ params }: Readonly<SectionParams>) {
   return <Section sectionSlug={params.sectionSlug} />
 }
