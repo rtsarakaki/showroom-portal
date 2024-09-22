@@ -1,5 +1,4 @@
-import NextAuth from 'next-auth'
-import { NextAuthOptions } from 'next-auth'
+import NextAuth, { NextAuthOptions } from 'next-auth'
 import GitHubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialProvider from 'next-auth/providers/credentials'

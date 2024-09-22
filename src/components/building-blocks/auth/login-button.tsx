@@ -22,24 +22,24 @@ function getButtonProps(provider: string, text?: string) {
       return {
         icon: <FaGithub />,
         style: 'bg-black text-white',
-        text: text || 'Login with Github'
+        text: text ?? 'Login with Github'
       }
     case 'google':
       return {
         icon: <FcGoogle />,
         style: 'bg-white text-black',
-        text: text || 'Login with Google'
+        text: text ?? 'Login with Google'
       }
     default:
       return {
         icon: <TbLogin2 />,
         style: 'bg-primary text-white',
-        text: text || 'Login with Credentials'
+        text: text ?? 'Login with Credentials'
       }
   }
 }
 
-export default function LoginButton(props: componentProps) {
+export default function LoginButton(props: Readonly<componentProps>) {
   const { icon, style, text } = getButtonProps(props.provider, props.text)
 
   const customSignIn = async () => {
