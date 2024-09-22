@@ -31,6 +31,16 @@ const googleProvider = GoogleProvider({
   clientSecret: authGoogleSecret
 })
 
+const fakeUserEmail = checkEnvironmentVariable(
+  process.env.FAKE_USER_EMAIL,
+  'FAKE_USER_EMAIL'
+)
+
+const fakeUserPassword = checkEnvironmentVariable(
+  process.env.FAKE_USER_PASSWORD,
+  'FAKE_USER_PASSWORD'
+)
+
 const customCredential = CredentialProvider({
   name: 'Credentials',
   credentials: {
@@ -40,8 +50,8 @@ const customCredential = CredentialProvider({
   async authorize(credentials) {
     const validUser = {
       id: '1',
-      email: 'rtsarakaki@gmail.com',
-      password: 'smartsoft',
+      email: fakeUserEmail,
+      password: fakeUserPassword,
       name: 'Ricardo T S Arakaki',
       role: 'admin',
       picture: '/avatar.png'

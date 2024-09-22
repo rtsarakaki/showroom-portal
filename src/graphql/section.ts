@@ -30,6 +30,7 @@ const GET_SECTION = gql`
       slug
       iconSvg
       cards {
+        id
         title
         description
         iconSvg
