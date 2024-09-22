@@ -6,7 +6,7 @@ interface ComponentProps {
 export default function TextToSvgIcon({
   icon,
   className = ''
-}: ComponentProps) {
+}: Readonly<ComponentProps>) {
   if (typeof icon !== 'string') {
     return <></>
   }

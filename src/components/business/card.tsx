@@ -16,7 +16,7 @@ export default async function Card({
   description,
   icon,
   navigateTo
-}: ComponentProps) {
+}: Readonly<ComponentProps>) {
   return (
     <Link
       href={navigateTo || ''}
