@@ -19,7 +19,7 @@ export default async function Section({
             <div className="flex flex-wrap">
               {section.cards?.map((card: any, index: number) => (
                 <Card
-                  key={index}
+                  key={card.id}
                   title={card.title}
                   icon={card.iconSvg}
                   navigateTo={card?.navigateTo || ''}
