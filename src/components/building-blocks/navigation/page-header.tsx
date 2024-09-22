@@ -1,5 +1,3 @@
-import { getSession } from 'next-auth/react'
-
 import Link from 'next/link'
 import { ThemeToggle } from '../layout/theme-toggle'
 import Profile from '../auth/profile'
@@ -12,7 +10,6 @@ export default async function PageHeader() {
   const header = await getHeader()
 
   return (
-    // <If condition={session !== null}>
     <>
       <header className="fixed w-full flex items-center bg-foreground text-background py-2">
         <nav className="flex w-full items-center justify-between m-auto max-w-screen-xl">
@@ -26,8 +23,8 @@ export default async function PageHeader() {
             </Link>
           </div>
           <ul className="flex items-center justify-between gap-4">
-            {header.menus?.map((menu: HeaderMenu, index: number) => (
-              <li key={index}>
+            {header.menus?.map((menu: HeaderMenu) => (
+              <li key={menu.id}>
                 <Link href={menu.navigateTo}>{menu.title}</Link>
               </li>
             ))}
@@ -45,6 +42,5 @@ export default async function PageHeader() {
       </header>
       <div className="h-12"></div>
     </>
-    // </If>
   )
 }
