@@ -33,11 +33,7 @@ export default async function Section({
         </div>
       )
     }
-    return (
-      <>
-        <h1>Nada a ser exibido</h1>
-      </>
-    )
+    return <h1>Nada a ser exibido</h1>
   } catch (error: any) {
     return (
       <div className="w-full h-screen flex flex-col justify-center items-center">
