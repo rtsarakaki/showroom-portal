@@ -11,7 +11,7 @@ type componentProps = {
   onChange?: (value: string) => void
 }
 
-export default function InputWithLabel(props: componentProps) {
+export default function InputWithLabel(props: Readonly<componentProps>) {
   const handleChangedValue = (value: string) => {
     props.onChange?.(value)
   }
@@ -21,7 +21,7 @@ export default function InputWithLabel(props: componentProps) {
       <Input
         type={props.type}
         id={`${props.id}_input`}
-        placeholder={props.placeHolder || props.label}
+        placeholder={props.placeHolder ?? props.label}
         onChange={(e) => handleChangedValue(e.target.value)}
       />
     </div>

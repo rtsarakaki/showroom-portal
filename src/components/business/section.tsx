@@ -8,7 +8,9 @@ interface ComponentProps {
   sectionSlug: string
 }
 
-export default async function Section({ sectionSlug }: ComponentProps) {
+export default async function Section({
+  sectionSlug
+}: Readonly<ComponentProps>) {
   try {
     const section = await getSection(sectionSlug)
     if (section) {

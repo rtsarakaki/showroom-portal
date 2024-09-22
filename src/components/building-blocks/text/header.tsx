@@ -4,7 +4,7 @@ type componentProps = {
   size: '5' | '4' | '3' | '2' | '1'
 }
 
-export default function Header(props: componentProps) {
+export default function Header(props: Readonly<componentProps>) {
   return (
     <h1
       className={`${

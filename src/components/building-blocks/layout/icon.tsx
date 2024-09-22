@@ -7,7 +7,7 @@ interface IconProps {
   size?: number | string
 }
 
-export function Icon(props: IconProps) {
+export function Icon(props: Readonly<IconProps>) {
   const LucideIcon = icons[props.name]
 
   return <LucideIcon color={props.color} size={props.size} />

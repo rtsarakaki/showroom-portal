@@ -3,7 +3,7 @@ type componentProps = {
   children: any
 }
 
-export default function If(props: componentProps) {
+export default function If(props: Readonly<componentProps>) {
   if (!props.condition) {
     return null
   }
