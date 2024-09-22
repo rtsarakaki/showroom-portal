@@ -1,4 +1,3 @@
-import { Section } from '@/types/section'
 import GraphqlClient from './graphql-client'
 import { gql } from 'graphql-request'
 import { Header } from '@/types/header'

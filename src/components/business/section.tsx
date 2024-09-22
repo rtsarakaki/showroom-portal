@@ -1,7 +1,5 @@
 import { getSection } from '@/graphql/section'
-import TextToSvgIcon from '../building-blocks/layout/text-to-svg-icon'
 import Header from '../building-blocks/text/header'
-import Link from 'next/link'
 import Card from './card'
 
 interface ComponentProps {
