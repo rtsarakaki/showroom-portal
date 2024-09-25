@@ -7,10 +7,10 @@ interface ComponentProps {
   title: string
   description: string
   icon: string
-  navigateTo: string
+  navigateTo?: string
 }
 
-export default async function Card({
+export default function Card({
   key,
   title,
   description,
@@ -19,7 +19,7 @@ export default async function Card({
 }: Readonly<ComponentProps>) {
   return (
     <Link
-      href={navigateTo || ''}
+      href={navigateTo ?? ''}
       key={key}
       className="flex flex-col w-full sm:w-6/12 md:w-4/12 lg:w-3/12"
     >
