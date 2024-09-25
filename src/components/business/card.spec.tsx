@@ -3,7 +3,7 @@ import Card from '@/components/business/card'
 import React from 'react'
 
 describe('Testing Card component', () => {
-  it('should render the label correctly', () => {
+  it('should render the card correctly', () => {
     render(
       <Card
         key={1}
