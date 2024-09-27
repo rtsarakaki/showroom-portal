@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Section from './section'
+import { Section as SectionType } from '@/types/section'
 import '@testing-library/jest-dom'
 
 // Mock dos componentes importados
@@ -33,7 +34,7 @@ jest.mock('./card', () => {
 })
 
 describe('Section', () => {
-  const defaultProps = {
+  const defaultProps: { section: SectionType } = {
     section: {
       title: 'Test Section Title',
       cards: [

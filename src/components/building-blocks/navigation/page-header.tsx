@@ -1,14 +1,19 @@
 import Link from 'next/link'
 import { ThemeToggle } from '../layout/theme-toggle'
 import Profile from '../auth/profile'
-import { getHeader } from '@/graphql/header'
 import Header from '../text/header'
-import { HeaderMenu } from '@/types/header'
+import { Header as HeaderType, HeaderMenu } from '@/types/header'
 import TextToSvgIcon from '../layout/text-to-svg-icon'
 
-export default async function PageHeader() {
-  const header = await getHeader()
+interface ComponentProps {
+  header: HeaderType
+  session: any
+}
 
+export default function PageHeader({
+  header,
+  session
+}: Readonly<ComponentProps>) {
   return (
     <>
       <header className="fixed w-full flex items-center bg-foreground text-background py-2">
@@ -33,6 +38,7 @@ export default async function PageHeader() {
             </li>
             <li>
               <Profile
+                session={session}
                 menus={header.profileMenus}
                 logoutText={header.buttonLogout}
               />

@@ -6,7 +6,7 @@ describe('Testing Card component', () => {
   it('should render the card correctly', () => {
     render(
       <Card
-        key={1}
+        id={1}
         title="Test Card"
         description="Testing card"
         icon=""
@@ -18,9 +18,7 @@ describe('Testing Card component', () => {
   })
 
   it('should render the label correctly no navigate', () => {
-    render(
-      <Card key={1} title="Test Card" description="Testing card" icon="" />
-    ) // ARRANGE
+    render(<Card id={1} title="Test Card" description="Testing card" icon="" />) // ARRANGE
     const cardElement = screen.getByText('Test Card') // ACT
     expect(cardElement).toBeInTheDocument() // ASSERT
   })
