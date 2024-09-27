@@ -7,22 +7,21 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-import { getSession } from 'next-auth/react'
 import LogoutButton from './logout-button'
 import { HeaderProfileMenu } from '@/types/header'
 import TextToSvgIcon from '../layout/text-to-svg-icon'
 
 interface ComponentProps {
+  session: any
   menus: HeaderProfileMenu[]
   logoutText: string
 }
 
-export default async function Profile({
+export default function Profile({
+  session,
   menus,
   logoutText
 }: Readonly<ComponentProps>) {
-  const session = await getSession()
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -31,8 +30,8 @@ export default async function Profile({
           size="icon"
         >
           <Image
-            src={session?.user?.picture || '/avatar.png'}
-            alt={session?.user?.name || ''}
+            src={session?.user?.picture ?? '/avatar.png'}
+            alt={session?.user?.name ?? ''}
             width={40}
             height={40}
             className="rounded-full"

@@ -7,6 +7,8 @@ import PageHeader from '@/components/building-blocks/navigation/page-header'
 import { AuthProvider } from '@/providers/auth.provider'
 import { ThemeProvider } from '@/providers/theme.provider'
 import checkEnvironmentVariable from '@/utilities/checkEnviromentVariable'
+import { getHeader } from '@/graphql/header'
+import { getSession } from 'next-auth/react'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -29,6 +31,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const header = await getHeader()
+  const session = await getSession()
   return (
     <AuthProvider>
       <html lang="en" suppressHydrationWarning>
@@ -45,7 +49,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <PageHeader />
+            <PageHeader header={header} session={session} />
             {children}
           </ThemeProvider>
         </body>

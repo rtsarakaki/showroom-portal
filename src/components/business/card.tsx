@@ -3,7 +3,7 @@ import TextToSvgIcon from '../building-blocks/layout/text-to-svg-icon'
 import Link from 'next/link'
 
 interface ComponentProps {
-  key: number
+  id: number
   title: string
   description: string
   icon: string
@@ -11,7 +11,7 @@ interface ComponentProps {
 }
 
 export default function Card({
-  key,
+  id,
   title,
   description,
   icon,
@@ -20,7 +20,7 @@ export default function Card({
   return (
     <Link
       href={navigateTo ?? ''}
-      key={key}
+      key={id}
       className="flex flex-col w-full sm:w-6/12 md:w-4/12 lg:w-3/12"
     >
       <div className="border border-secondary-foreground rounded-sm p-5 gap-5 m-1  flex flex-col h-full">
