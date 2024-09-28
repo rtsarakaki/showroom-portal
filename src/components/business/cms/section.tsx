@@ -1,4 +1,4 @@
-import Header from '../building-blocks/text/header'
+import Header from '../../building-blocks/text/header'
 import Card from './card'
 import { Section as SectionType } from '@/types/section'
 
@@ -15,6 +15,7 @@ export default function Section({ section }: Readonly<ComponentProps>) {
           {section.cards?.map((card: any, index: number) => (
             <Card
               key={card.id}
+              id={card.id}
               title={card.title}
               icon={card.iconSvg}
               navigateTo={card?.navigateTo ?? ''}

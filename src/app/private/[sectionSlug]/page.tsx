@@ -1,4 +1,4 @@
-import Section from '@/components/business/section'
+import Section from '@/components/business/cms/section'
 import { getSection } from '@/graphql/section'
 
 interface SectionParams {
