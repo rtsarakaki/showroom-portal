@@ -3,7 +3,7 @@ name: "DEV DEPLOY"
 on:
     push:
         branches:
-            - develop
+            - develop_ignore
         paths:
             - "infra/**"
 
