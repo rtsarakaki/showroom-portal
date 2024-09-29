@@ -1,5 +1,5 @@
-import Header from '../building-blocks/text/header'
-import TextToSvgIcon from '../building-blocks/layout/text-to-svg-icon'
+import Header from '../../building-blocks/text/header'
+import TextToSvgIcon from '../../building-blocks/layout/text-to-svg-icon'
 import Link from 'next/link'
 
 interface ComponentProps {
@@ -11,7 +11,6 @@ interface ComponentProps {
 }
 
 export default function Card({
-  id,
   title,
   description,
   icon,
@@ -20,7 +19,6 @@ export default function Card({
   return (
     <Link
       href={navigateTo ?? ''}
-      key={id}
       className="flex flex-col w-full sm:w-6/12 md:w-4/12 lg:w-3/12"
     >
       <div className="border border-secondary-foreground rounded-sm p-5 gap-5 m-1  flex flex-col h-full">

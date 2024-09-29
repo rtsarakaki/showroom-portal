@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Card from '@/components/business/card'
+import Card from '@/components/business/cms/card'
 import React from 'react'
 
 describe('Testing Card component', () => {

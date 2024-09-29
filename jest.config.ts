@@ -15,7 +15,11 @@ const config: Config = {
   preset: 'ts-jest',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.ts(x)']
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx,js,jsx}', // Inclui arquivos .ts, .tsx, .js e .jsx
+    '!src/**/*.d.ts', // Exclui arquivos de definição de tipos
+    '!src/**/index.{ts,tsx,js,jsx}', // Exclui arquivos de índice
+  ],
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

@@ -13,7 +13,7 @@
     "clean": "find . -name 'node_modules' -type d -exec rm -rf {} + && rm yarn.lock &&yarn cache clean && yarn install",
     "prepare": "husky",
     "commit": "cz",
-    "coverage": "yarn test --coverage"
+    "coverage": "reset && yarn test --coverage"
   },
   "lint-staged": {
     "src/**/*": [
@@ -27,6 +27,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@tanstack/react-query": "^5.50.1",
     "@tanstack/react-query-devtools": "^5.50.1",
+    "@testing-library/react-hooks": "^8.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "graphql": "^16.9.0",
@@ -45,6 +46,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

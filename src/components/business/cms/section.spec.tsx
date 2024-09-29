@@ -4,7 +4,7 @@ import { Section as SectionType } from '@/types/section'
 import '@testing-library/jest-dom'
 
 // Mock dos componentes importados
-jest.mock('../building-blocks/text/header', () => {
+jest.mock('../../building-blocks/text/header', () => {
   const MockHeader = ({ text }: { text: string }) => <div>{text}</div>
   MockHeader.displayName = 'MockHeader'
   return MockHeader
