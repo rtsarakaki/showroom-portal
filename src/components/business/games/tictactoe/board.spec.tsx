@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import Board from './board'
 
 function renderComponent() {
@@ -71,4 +71,15 @@ describe('Testing Tic Tac Toe component', () => {
       })
     }
   )
+
+    it('should reset the board', () => {
+      renderComponent() // ARRANGE
+      const boxA1 = screen.getByTestId('A1')
+      fireEvent.click(boxA1) // ACT
+      expect(boxA1.textContent).toBe('X') // ASSERT
+      const btnReset = screen.getByText('Reset')
+      fireEvent.click(btnReset) // ACT
+      expect(boxA1.textContent).toBe('') // ASSERT
+    })
+
 })

@@ -1,13 +1,19 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import Box from './box'
 
-function renderComponent(borderX?: boolean, borderY?: boolean, value?: any) {
+function renderComponent(
+  borderX?: boolean,
+  borderY?: boolean,
+  value?: any,
+  onClick?: () => string
+) {
   render(
     <Box
       boxId="test"
       borderX={borderX ?? false}
       borderY={borderY ?? false}
       value={value}
+      onClick={onClick}
     />
   )
 }
@@ -53,5 +59,14 @@ describe('Testing Tic Tac Toe Box component', () => {
     renderComponent(false, false, 'X') // ARRANGE
     const box = screen.queryByText('XA') // ACT
     expect(box).not.toBeInTheDocument() // ASSERT
+  })
+
+  it('should return boxid when clicked', () => {
+    const boxClicked = jest.fn() // Mock function to handle click
+
+    renderComponent(false, false, '', boxClicked) // ARRANGE
+    const box = screen.getByTestId('test') // ACT
+    fireEvent.click(box)
+    expect(boxClicked).toHaveBeenCalledWith('test') // ASSERT
   })
 })
